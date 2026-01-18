@@ -1,6 +1,5 @@
 import { useState, useMemo } from 'react';
 import { useFinance } from '../../contexts/FinanceContext';
-import type { Transaction } from '../../types';
 
 /**
  * TransactionsTable - Tabela de transações detalhada

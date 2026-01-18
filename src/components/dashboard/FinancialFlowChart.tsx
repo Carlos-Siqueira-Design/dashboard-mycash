@@ -97,11 +97,13 @@ export default function FinancialFlowChart() {
               }
             />
             <Tooltip
-              formatter={(value: number) =>
-                new Intl.NumberFormat('pt-BR', {
-                  style: 'currency',
-                  currency: 'BRL',
-                }).format(value)
+              formatter={(value: number | undefined) =>
+                value !== undefined
+                  ? new Intl.NumberFormat('pt-BR', {
+                      style: 'currency',
+                      currency: 'BRL',
+                    }).format(value)
+                  : ''
               }
             />
             <Legend />

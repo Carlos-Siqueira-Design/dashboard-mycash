@@ -14,7 +14,16 @@ interface AddCardModalProps {
  */
 export default function AddCardModal({ isOpen, onClose, type }: AddCardModalProps) {
   const { addCreditCard, addBankAccount, familyMembers } = useFinance();
-  const [formData, setFormData] = useState({
+  const [formData, setFormData] = useState<{
+    name: string;
+    holderId: string;
+    closingDay?: string;
+    dueDay?: string;
+    limit?: string;
+    theme?: CardTheme;
+    lastDigits?: string;
+    balance?: string;
+  }>({
     name: '',
     holderId: '',
     ...(type === 'credit'
@@ -45,7 +54,7 @@ export default function AddCardModal({ isOpen, onClose, type }: AddCardModalProp
         dueDay: parseInt(formData.dueDay as string),
         limit: parseFloat(formData.limit as string),
         currentBill: 0,
-        theme: formData.theme as CardTheme,
+        theme: (formData.theme || 'black') as CardTheme,
         lastDigits: formData.lastDigits || undefined,
       });
     } else {
@@ -56,7 +65,7 @@ export default function AddCardModal({ isOpen, onClose, type }: AddCardModalProp
       addBankAccount({
         name: formData.name,
         holderId: formData.holderId,
-        balance: parseFloat(formData.balance as string),
+        balance: parseFloat(formData.balance || '0'),
       });
     }
 
