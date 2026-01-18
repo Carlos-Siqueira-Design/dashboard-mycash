@@ -1,6 +1,7 @@
 import BalanceCard from '../components/dashboard/BalanceCard';
 import IncomeCard from '../components/dashboard/IncomeCard';
 import ExpenseCard from '../components/dashboard/ExpenseCard';
+import DashboardHeader from '../components/dashboard/DashboardHeader';
 
 /**
  * Dashboard - Página principal do sistema
@@ -15,6 +16,9 @@ export default function Dashboard() {
       >
         Dashboard
       </h1>
+      
+      {/* Header com Controles */}
+      <DashboardHeader />
       
       {/* Cards de Resumo */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-8">
