@@ -16,7 +16,17 @@ export default function CardsAccountsWidget() {
     return 'Banco';
   };
 
-  const allItems = [
+  type ItemType = {
+    type: 'credit' | 'bank';
+    id: string;
+    name: string;
+    amount: number;
+    dueDate: number | null;
+    lastDigits: string | null;
+    logo: string;
+  };
+
+  const allItems: ItemType[] = [
     ...creditCards.map((card) => ({
       type: 'credit' as const,
       id: card.id,
