@@ -9,6 +9,13 @@ export default function CardsAccountsWidget() {
   const { creditCards, bankAccounts } = useFinance();
   const [showAll, setShowAll] = useState(false);
 
+  const getLogoFromName = (name: string) => {
+    if (name.toLowerCase().includes('nubank')) return 'Nubank';
+    if (name.toLowerCase().includes('inter')) return 'Inter';
+    if (name.toLowerCase().includes('xp')) return 'XP Inc.';
+    return 'Banco';
+  };
+
   const allItems = [
     ...creditCards.map((card) => ({
       type: 'credit' as const,
@@ -17,7 +24,7 @@ export default function CardsAccountsWidget() {
       amount: card.currentBill,
       dueDate: card.dueDay,
       lastDigits: card.lastDigits || '5897',
-      logo: 'Nubank', // TODO: adicionar logos reais
+      logo: getLogoFromName(card.name),
     })),
     ...bankAccounts.map((account) => ({
       type: 'bank' as const,
@@ -26,7 +33,7 @@ export default function CardsAccountsWidget() {
       amount: account.balance,
       dueDate: null,
       lastDigits: null,
-      logo: 'Inter', // TODO: adicionar logos reais
+      logo: getLogoFromName(account.name),
     })),
   ];
 
@@ -102,7 +109,11 @@ export default function CardsAccountsWidget() {
                 <div className="flex items-center gap-2 text-xs" style={{ color: 'var(--neutral-600)' }}>
                   {item.dueDate && (
                     <>
-                      <span>Vence {item.dueDate} {item.type === 'credit' ? 'jan' : ''}</span>
+                      <span>
+                        {item.type === 'credit'
+                          ? `Vence dia ${item.dueDate}`
+                          : `Vence ${item.dueDate} jan`}
+                      </span>
                       {item.lastDigits && <span>•</span>}
                     </>
                   )}
