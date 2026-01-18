@@ -2,6 +2,10 @@ import BalanceCard from '../components/dashboard/BalanceCard';
 import IncomeCard from '../components/dashboard/IncomeCard';
 import ExpenseCard from '../components/dashboard/ExpenseCard';
 import DashboardHeader from '../components/dashboard/DashboardHeader';
+import CategorySpendingCarousel from '../components/dashboard/CategorySpendingCarousel';
+import FinancialFlowChart from '../components/dashboard/FinancialFlowChart';
+import CreditCardsWidget from '../components/dashboard/CreditCardsWidget';
+import UpcomingExpensesWidget from '../components/dashboard/UpcomingExpensesWidget';
 
 /**
  * Dashboard - Página principal do sistema
@@ -25,6 +29,26 @@ export default function Dashboard() {
         <BalanceCard />
         <IncomeCard />
         <ExpenseCard />
+      </div>
+
+      {/* Carrossel de Gastos por Categoria */}
+      <div className="mb-8">
+        <CategorySpendingCarousel />
+      </div>
+
+      {/* Gráfico de Fluxo Financeiro */}
+      <div className="mb-8">
+        <FinancialFlowChart />
+      </div>
+
+      {/* Widget de Cartões de Crédito */}
+      <div className="mb-8">
+        <CreditCardsWidget />
+      </div>
+
+      {/* Widget de Próximas Despesas */}
+      <div className="mb-8">
+        <UpcomingExpensesWidget />
       </div>
     </div>
   );
