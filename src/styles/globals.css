@@ -1,0 +1,43 @@
+@import './tokens.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    font-family: var(--font-family-base);
+    margin: 0;
+    padding: 0;
+    background-color: var(--neutral-100);
+    color: var(--neutral-900);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* Garantir layout fluido */
+  #root {
+    width: 100%;
+    min-height: 100vh;
+  }
+}
+
+@layer utilities {
+  /* Utilitários para usar tokens CSS */
+  .text-neutral-0 { color: var(--neutral-0); }
+  .text-neutral-100 { color: var(--neutral-100); }
+  .text-neutral-900 { color: var(--neutral-900); }
+  .text-neutral-1100 { color: var(--neutral-1100); }
+  
+  .bg-neutral-0 { background-color: var(--neutral-0); }
+  .bg-neutral-100 { background-color: var(--neutral-100); }
+  .bg-neutral-900 { background-color: var(--neutral-900); }
+  .bg-neutral-1100 { background-color: var(--neutral-1100); }
+  
+  .bg-brand-600 { background-color: var(--brand-600); }
+  
+  /* Espaçamentos usando tokens */
+  .p-container-mobile { padding: var(--spacing-md); }
+  .p-container-tablet { padding: var(--spacing-lg); }
+  .p-container-desktop { padding: var(--spacing-xl); }
+}

@@ -1,0 +1,133 @@
+/* Tokens Primitivos do Design System */
+/* Fonte: https://docs.google.com/spreadsheets/d/1icfTxXdSbtd029FfOYnrlMs2pC8HJqk5PDuEmQF5Zjo/edit?gid=0#gid=0 */
+
+:root {
+  /* Neutral Colors */
+  --neutral-0: #FFFFFF;
+  --neutral-100: #F9FAFB;
+  --neutral-200: #F3F4F6;
+  --neutral-300: #E5E7EB;
+  --neutral-400: #D1D5DB;
+  --neutral-500: #9CA3AF;
+  --neutral-600: #6B7280;
+  --neutral-700: #4B5563;
+  --neutral-800: #374151;
+  --neutral-900: #1F2937;
+  --neutral-1000: #111827;
+  --neutral-1100: #080B12;
+
+  /* Brand Colors */
+  --brand-100: #FBFFE6;
+  --brand-200: #F3FFB1;
+  --brand-300: #EDFF8B;
+  --brand-400: #E4FE56;
+  --brand-500: #DFFE35;
+  --brand-600: #D7FE03;
+  --brand-700: #C4E703;
+  --brand-800: #99B402;
+  --brand-900: #768C02;
+  --brand-1000: #5A6B01;
+
+  /* Blue Colors */
+  --blue-100: #EAF3FD;
+  --blue-200: #D4E7FC;
+  --blue-300: #AAD0F9;
+  --blue-400: #7FB8F5;
+  --blue-500: #55A1F2;
+  --blue-600: #2A89EF;
+  --blue-700: #226EBF;
+  --blue-800: #19528F;
+  --blue-900: #113760;
+  --blue-1000: #081B30;
+
+  /* Green Colors */
+  --green-100: #E8F9F2;
+  --green-200: #D0F2E4;
+  --green-300: #A1E5C9;
+  --green-400: #73D8AE;
+  --green-500: #44CB93;
+  --green-600: #15BE78;
+  --green-700: #119860;
+  --green-800: #0D7248;
+  --green-900: #084C30;
+  --green-1000: #042618;
+
+  /* Red Colors */
+  --red-100: #FDE9EB;
+  --red-200: #FAD2D6;
+  --red-300: #F5A5AD;
+  --red-400: #F07884;
+  --red-500: #EB4B5B;
+  --red-600: #E61E32;
+  --red-700: #B81828;
+  --red-800: #8A121E;
+  --red-900: #5C0C14;
+  --red-1000: #2E060A;
+
+  /* Purple Colors */
+  --purple-100: #F4ECFE;
+  --purple-200: #E8D8FD;
+  --purple-300: #D2B1FB;
+  --purple-400: #BB8BF9;
+  --purple-500: #A564F7;
+  --purple-600: #8E3DF5;
+  --purple-700: #7231C4;
+  --purple-800: #552593;
+  --purple-900: #391862;
+  --purple-1000: #1C0C31;
+
+  /* Pink Colors */
+  --pink-100: #FDEAF9;
+  --pink-200: #FAD5F2;
+  --pink-300: #F6ABE5;
+  --pink-400: #F182D9;
+  --pink-500: #ED58CC;
+  --pink-600: #E82EBF;
+  --pink-700: #BA2599;
+  --pink-800: #8B1C73;
+  --pink-900: #5D124C;
+  --pink-1000: #2E0926;
+
+  /* Orange Colors */
+  --orange-100: #FFF3E7;
+  --orange-200: #FFE7CE;
+  --orange-300: #FFCE9D;
+  --orange-400: #FFB66C;
+  --orange-500: #FF9D3B;
+  --orange-600: #FF850A;
+  --orange-700: #CC6A08;
+  --orange-800: #995006;
+  --orange-900: #663504;
+  --orange-1000: #331B02;
+
+  /* Yellow Colors */
+  --yellow-100: #FEF7E7;
+  --yellow-200: #FEEECF;
+  --yellow-300: #FDDD9F;
+  --yellow-400: #FBCD70;
+  --yellow-500: #FABC40;
+  --yellow-600: #F9AB10;
+  --yellow-700: #C7890D;
+  --yellow-800: #95670A;
+  --yellow-900: #644406;
+  --yellow-1000: #322203;
+
+  /* Spacing - A ser mapeado do Figma */
+  --spacing-xs: 0.25rem;   /* 4px */
+  --spacing-sm: 0.5rem;    /* 8px */
+  --spacing-md: 1rem;      /* 16px */
+  --spacing-lg: 1.5rem;    /* 24px */
+  --spacing-xl: 2rem;      /* 32px */
+  --spacing-2xl: 3rem;     /* 48px */
+  --spacing-3xl: 4rem;     /* 64px */
+
+  /* Typography */
+  --font-family-base: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  
+  /* Border Radius */
+  --radius-sm: 0.25rem;    /* 4px */
+  --radius-md: 0.5rem;     /* 8px */
+  --radius-lg: 1rem;       /* 16px */
+  --radius-xl: 1.5rem;     /* 24px */
+  --radius-full: 9999px;
+}
