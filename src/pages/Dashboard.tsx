@@ -1,54 +1,47 @@
-import BalanceCard from '../components/dashboard/BalanceCard';
-import IncomeCard from '../components/dashboard/IncomeCard';
-import ExpenseCard from '../components/dashboard/ExpenseCard';
-import DashboardHeader from '../components/dashboard/DashboardHeader';
-import CategorySpendingCarousel from '../components/dashboard/CategorySpendingCarousel';
-import FinancialFlowChart from '../components/dashboard/FinancialFlowChart';
-import CreditCardsWidget from '../components/dashboard/CreditCardsWidget';
+import TopHeaderBar from '../components/dashboard/TopHeaderBar';
+import CategoryProgressCards from '../components/dashboard/CategoryProgressCards';
+import SummaryCards from '../components/dashboard/SummaryCards';
+import CardsAccountsWidget from '../components/dashboard/CardsAccountsWidget';
 import UpcomingExpensesWidget from '../components/dashboard/UpcomingExpensesWidget';
+import FinancialFlowLineChart from '../components/dashboard/FinancialFlowLineChart';
+import DetailedStatement from '../components/transactions/DetailedStatement';
 
 /**
  * Dashboard - Página principal do sistema
- * Composição de componentes da dashboard
+ * Estrutura conforme Figma:
+ * 1. Top Header Bar (busca, filtros, data, avatares, botão nova transação)
+ * 2. Cards de Categorias com Progresso (4 cards: Aluguel, Alimentação, Compras, Moradia)
+ * 3. Seção Meio: Cards de Resumo (esquerda) + Cartões/Contas e Próximas Despesas (direita)
+ * 4. Seção Inferior: Gráfico de Fluxo (esquerda) + Extrato Detalhado (direita)
  */
 export default function Dashboard() {
   return (
     <div className="w-full py-8">
-      <h1
-        className="text-2xl font-bold mb-6"
-        style={{ color: 'var(--neutral-900)' }}
-      >
-        Dashboard
-      </h1>
-      
-      {/* Header com Controles */}
-      <DashboardHeader />
-      
-      {/* Cards de Resumo */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-8">
-        <BalanceCard />
-        <IncomeCard />
-        <ExpenseCard />
+      {/* Top Header Bar */}
+      <TopHeaderBar />
+
+      {/* Cards de Categorias com Progresso Circular */}
+      <CategoryProgressCards />
+
+      {/* Seção Meio: Dividida em duas partes */}
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
+        {/* Esquerda: Cards de Resumo */}
+        <SummaryCards />
+
+        {/* Direita: Cartões/Contas e Próximas Despesas */}
+        <div className="space-y-4">
+          <CardsAccountsWidget />
+          <UpcomingExpensesWidget />
+        </div>
       </div>
 
-      {/* Carrossel de Gastos por Categoria */}
-      <div className="mb-8">
-        <CategorySpendingCarousel />
-      </div>
+      {/* Seção Inferior: Dividida em duas partes */}
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+        {/* Esquerda: Gráfico de Fluxo Financeiro (linha) */}
+        <FinancialFlowLineChart />
 
-      {/* Gráfico de Fluxo Financeiro */}
-      <div className="mb-8">
-        <FinancialFlowChart />
-      </div>
-
-      {/* Widget de Cartões de Crédito */}
-      <div className="mb-8">
-        <CreditCardsWidget />
-      </div>
-
-      {/* Widget de Próximas Despesas */}
-      <div className="mb-8">
-        <UpcomingExpensesWidget />
+        {/* Direita: Extrato Detalhado */}
+        <DetailedStatement />
       </div>
     </div>
   );
